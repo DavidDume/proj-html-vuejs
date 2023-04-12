@@ -3,7 +3,7 @@
         <div class="logo pointer">
             <img src="../assets/avada-music-logo.png" alt="Logo">
         </div>
-        <button class="accordion-btn pointer">
+        <button class="menu-btn pointer" @click="$emit('open')">
             <i class="fa-solid fa-bars"></i>
         </button>
     </header>
@@ -73,12 +73,7 @@
         
     }
 
-    .accordion-btn {
-        background-color: transparent;
-        border: none;
-        color: white;
-        font-size: 18px;
-    }
+
 </style>
 
 <script>

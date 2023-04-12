@@ -1,16 +1,31 @@
 <script>
   import Header from './components/Header.vue';
+  import Menu from './components/Menu.vue';
+
+  import {store} from './store';
 
   export default {
     components: {
-      Header
+      Header,
+      Menu
+    },
+    data() {
+      return {
+        store
+      }
+    },
+    methods: {
+
     }
   }
 </script>
 
 <template>
+  <div class="">
+    <Menu v-show="store.showMenu" @closeMenu="store.showMenu = false"></Menu>
+  </div>
   <div class="main-header">
-    <Header></Header>
+    <Header @open="store.showMenu = true"></Header>
   </div>
 
 </template>
