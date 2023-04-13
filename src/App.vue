@@ -2,6 +2,8 @@
   import Header from './components/Header.vue';
   import Menu from './components/Menu.vue';
   import Main from './components/Main.vue';
+  import BlogPosts from './components/BlogPosts.vue';
+
 
   import {store} from './store';
 
@@ -9,7 +11,8 @@
     components: {
       Header,
       Menu,
-      Main
+      Main,
+      BlogPosts
     },
     data() {
       return {
@@ -32,7 +35,10 @@
   <div class="container">
     <Main></Main>
   </div>
-  
+  <div class="container bg-dark">
+    <BlogPosts></BlogPosts>
+  </div>
+
 </template>
 
 <style lang="scss">
@@ -49,5 +55,9 @@
 
   .container {
     background-color: $title-bg;
+  }
+
+  .bg-dark {
+    background-color: $bg-dark;
   }
 </style>

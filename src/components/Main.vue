@@ -6,6 +6,7 @@
         <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione similique sit quam, eum placeat maxime. Nihil corporis </p>
     </div>
+
 </template>
 
 <script>
@@ -29,7 +30,7 @@
         }
         & h1 {
             color: white;
-            margin: 20px 0 10px 0;
+            padding: 20px 0 10px 0;
             letter-spacing: 1px;
             font-size: 30px;
         }
@@ -48,5 +49,6 @@
             color: #838092;
         }
     }
+
 
 </style>
