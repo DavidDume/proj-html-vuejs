@@ -1,8 +1,11 @@
 <template>
 
     <div class="blog-container">
-        <div v-for="(post, index) in posts" :class="blogClass + index" class="post" :style="{'backgroundImage': `url(${post.img})`}">
-           
+        <div v-for="(post, index) in posts" :class="blogClass + index" class="post pointer" :style="{'backgroundImage': `url(${post.img})`}"
+        @mouseover="showTitle=index" @mouseleave="showTitle=null">
+           <div class="on-hover" v-show="showTitle==index">
+            <h1>{{post.title}}</h1>
+           </div>
             <div class="post-text">
                 <h4>{{ post.title }}</h4>
                 <p>{{ post.subtitle }}</p>
@@ -47,14 +50,26 @@
                         subtitle: 'Sed sit amet turpis. Curabitur cursus lacinia est at interdum risus id condimentum'
                     },
                 ],
-                blogClass: 'blog'
+                blogClass: 'blog',
+                showTitle: null
             }
+        },
+        methods: {
         }
     }
 </script>
 
 <style lang="scss">
 @use '../styles/variables' as *;
+
+    .on-hover {
+        background-color: $red;
+        color: white;
+        text-align: center;
+        width: 100%;
+        height: 100%;
+        opacity: 0.7;
+    }
     .blog-container {
         display: grid;
         grid-template-columns: repeat(6, 1fr);
@@ -80,10 +95,9 @@
     }
 
     .post-text {
-        height: 60px;
         background-color: #323844;
         text-align: left;
-        padding: 5px;
+        padding: 15px;
         margin: 0;
         position: absolute;
         left: 0;

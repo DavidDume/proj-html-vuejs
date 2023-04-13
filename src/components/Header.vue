@@ -1,5 +1,5 @@
 <template>
-    <header>
+    <header class="links-menu">
         <div class="logo pointer">
             <img src="../assets/avada-music-logo.png" alt="Logo">
         </div>
@@ -24,7 +24,7 @@
 <style lang="scss">
     @use '../styles/variables' as *;
 
-    header {
+    .links-menu {
         display: flex;
         justify-content: space-between;
         align-items: center;

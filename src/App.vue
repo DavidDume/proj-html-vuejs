@@ -3,7 +3,10 @@
   import Menu from './components/Menu.vue';
   import Main from './components/Main.vue';
   import BlogPosts from './components/BlogPosts.vue';
-
+  import ShowTemplate from './components/ShowTemplate.vue';
+  import Trailer from './components/Trailer.vue';
+  import LiveDates from './components/LiveDates.vue';
+  import Footer from './components/Footer.vue';
 
   import {store} from './store';
 
@@ -12,21 +15,22 @@
       Header,
       Menu,
       Main,
-      BlogPosts
+      BlogPosts,
+      ShowTemplate,
+      Trailer,
+      LiveDates,
+      Footer
     },
     data() {
       return {
         store
       }
-    },
-    methods: {
-
     }
   }
 </script>
 
 <template>
-  <div class="">
+  <div class="menu-container">
     <Menu v-show="store.showMenu" @closeMenu="store.showMenu = false"></Menu>
   </div>
   <div class="main-header">
@@ -38,6 +42,18 @@
   <div class="container bg-dark">
     <BlogPosts></BlogPosts>
   </div>
+
+  <ShowTemplate title="view all latest news"></ShowTemplate>
+  <Trailer></Trailer>
+
+  <div class="container bg-dark">
+    <LiveDates></LiveDates>
+  </div>
+
+  
+  <ShowTemplate title="view all Live Dates"></ShowTemplate>
+
+  <Footer></Footer>
 
 </template>
 

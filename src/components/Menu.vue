@@ -21,8 +21,10 @@
         position: absolute;
         top: 0;
         left: 0;
-        width: 100vw;
-        height: 100vh;
+        width: 100%;
+        height: 100%;
+        z-index: 12353;
+        overflow: hidden;
         background-color: $red;
         & .top-menu {
             display: flex;
@@ -44,10 +46,11 @@
                 font-size: 30px;
                 font-weight: 300;
                 margin: 40px;
-            }
-            & .active {
+                &:hover {
                     color: white;
                 }
+            }
+            
         }
     }
 </style>
